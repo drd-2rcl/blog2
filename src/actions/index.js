@@ -6,13 +6,9 @@ export const fetchPosts = () => async dispatch => {
   dispatch({ type: 'FETCH_POSTS', payload: response.data })
 }
 
-// REFACTORING UP
-
-// export const fetchPosts = () => {
-//   return async function(dispatch, getState) {
-//     const response = await jsonPlaceholder.get('/posts');
+export const fetchUser = (id) => async dispatch => {
+  const response = await jsonPlaceholder.get(`users/${id}`);
   
-//     dispatch({ type: 'FETCH_POSTS', payload: response })
-//   }
-// };
+  dispatch({ type: 'FETCH USER', payload: response.data });
+}
 
